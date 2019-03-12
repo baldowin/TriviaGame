@@ -1,0 +1,21 @@
+.container{
+    margin-bottom:20px;
+}
+.title{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+#time-line{
+    font-size: 25px;
+    margin-bottom:30px;
+}
+.question{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.answers{
+    font-size: 25px;
+}
+.ans{
+    margin-bottom: 5px;
+}
