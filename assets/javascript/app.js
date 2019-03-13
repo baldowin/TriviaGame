@@ -1,5 +1,6 @@
 var index = 0;
 var correct=0;
+var incorrect=0;
 var intervalId;
 var time;
 var correctAnswer;
@@ -57,6 +58,8 @@ var questions=[Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q0];
 function next(){
     if(index===questions.length){
         $(".answers").text("You got "+correct+" questions correct");
+        $(".answers").append(" and "+incorrect+" questions incorrect");
+        $(".answers").append("You failed to answer +"(index-correct-incorrect)+" questions");
         $(".question").text("GAME OVER");
         var ansLine = $("<h3>");
         ansLine.addClass("ans");
@@ -98,6 +101,7 @@ function stop(){
 function restart(){
     index=0;
     correct=0;
+    incorrect=0;
     $(".answers").html('<h3 class="ans">Click to Start!</h3>');
     $(".question").empty();
 }
@@ -114,8 +118,9 @@ function right(){
 }
 function wrong(){
     stop();
-    $(".question").text("Too bad, that is not correct");
+    $(".question").text("Too bad!");
     $(".answers").text("The correct answer is: "+correctAnswer);
+    incorrect++;
 }
 $(".answers").on("click",".ans",function(){
     if (index!=0){
